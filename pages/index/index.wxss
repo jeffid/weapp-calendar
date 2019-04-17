@@ -1,0 +1,11 @@
+/**index.wxss**/
+.container {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  bottom: 10%;
+  left: 5%;
+  overflow: hidden;
+  background-color: lightgoldenrodyellow;
+  border: 1px solid #000;
+}
