@@ -55,11 +55,11 @@
             wx:for-item="day"
             wx:key="{{day.ymd}}"
             bind:tap='onSelectDate'
-            class="date {{day.m!=calendar.m ? 'placeholder':''}} {{day.ymd>deadline ? 'unavailable':''}} {{day.ymd==selectedYmd ? 'active':''}}"
+            class="date {{day.m!=calendar.m ? 'placeholder':''}} {{(day.ymd<begin||day.ymd>deadline) ? 'unavailable':''}} {{day.ymd==selectedYmd ? 'active':''}}"
             data-week-idx="{{weekIdx}}"
             data-index="{{index}}"
             data-ymd="{{day.ymd}}"
-            data-is-available="{{day.ymd<=deadline}}"
+            data-is-available="{{day.ymd>=begin && day.ymd<=deadline}}"
         >
           <view class="bg theme-color"></view>
           <text>{{day.date}}</text>

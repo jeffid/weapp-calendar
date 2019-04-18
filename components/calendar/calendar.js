@@ -11,6 +11,11 @@ Component({
       value: '' //类似 '2019-03-21' 年月日字串
     },
     
+    begin: {
+      type: String,
+      value: '1900-01-01' //年月日字串
+    },
+    
     deadline: {
       type: String,
       value: '' //年月日字串

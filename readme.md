@@ -3,6 +3,7 @@
 ## 特点
 * 可设置一周的起始日期是周一或周日
 * 可初始显示指定的日期
+* 可设置开始选择的日期
 * 可设置截止选择的日期
 * 可设置有标红点的日期
 * 可更改主题色
@@ -23,15 +24,17 @@
 ```wxml
   <!--
  * 日历选择组件
- * 属性名                   类型    是否必须   默认值       说明
- * is-calendar-show     [Boolean]   是      false    是否显示日历组件
- * is-insert            [Boolean]   否      fasle    是否开启插入模式,不显示背景遮罩层
- * format               [Boolean]   否      1        一周开始的第一天是周几,0:周日,1:周一
- * target-date          [String]    否      今天      日历开始时显示选择的哪一天,如`2019-03-21`
- * deadline             [String]    否      今天      哪一天之后的日期不可被选择,如`9102-11-11`
- * mark                 [Array]     否      []       那些日期被选中,格式如`['2019-03-20','2019-03-22']`
- * bind:cal-show-toggle [function]  否               日历栏开启或关闭时的响应事件
- * bind:getdate         [function]  否               当前选择的日期的响应事件,`detail`中有选择的日期如`2019-03-21`
+ * https://github.com/jeffid/weapp-calendar
+ * 属性名                   类型    是否必须   默认值         说明
+ * is-calendar-show     [Boolean]   是      false      是否显示日历组件
+ * is-insert            [Boolean]   否      fasle      是否开启插入模式,不显示背景遮罩层
+ * format               [Boolean]   否      1          一周开始的第一天是周几,0:周日,1:周一
+ * target-date          [String]    否      今天        日历开始时显示选择的哪一天,如`2019-03-21`
+ * begin                [String]    否   '1900-01-01'  哪一天之前的日期不可被选择,如`1900-01-01`
+ * deadline             [String]    否      今天        哪一天之后的日期不可被选择,如`9102-11-11`
+ * mark                 [Array]     否      []         那些日期被选中,格式如`['2019-03-20','2019-03-22']`
+ * bind:cal-show-toggle [function]  否                 日历栏开启或关闭时的响应事件
+ * bind:getdate         [function]  否                 当前选择的日期的响应事件,`detail`中有选择的日期如`2019-03-21`
   -->
   <calendar
       is-calendar-show="{{isCalendarShow}}"
